@@ -11,7 +11,7 @@ class Controller {
       params: { date: "2022-04-17" },
       headers: {
         "X-RapidAPI-Host": process.env.HOST_CHART,
-        "X-RapidAPI-Key": "2202f4129amsh3db77d9573b4d9cp1bea67jsnadca2d22401c",
+        "X-RapidAPI-Key": process.env.KEY_CHART,
       },
     };
 
@@ -58,7 +58,7 @@ class Controller {
     let { name, title } = req.params;
 
     title = title.split(" ").join("-").toLowerCase();
-    console.log(title, name);
+
     const options = {
       method: "GET",
       url: `https://lyrics-finder1.p.rapidapi.com/${name}/${title}`,
